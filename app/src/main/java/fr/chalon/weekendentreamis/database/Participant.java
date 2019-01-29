@@ -5,6 +5,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.util.List;
+
 @Entity(tableName = "Participant")
 public class Participant {
     @PrimaryKey
@@ -17,7 +19,15 @@ public class Participant {
     @ColumnInfo(name="prenom")
     private String prenom;
 
-    public Participant(@NonNull String nom){
+    @ColumnInfo(name="sejours")
+    private List<Sejour> sejours;
+
+    @ColumnInfo(name = "PosteDepenses")
+    private List<PosteDepense> posteDepenses;
+
+    public Participant(@NonNull String nom, @NonNull List<Sejour> sejours, @NonNull List<PosteDepense> posteDepenses){
         this.nom = nom;
+        this.sejours = sejours;
+        this.posteDepenses = posteDepenses;
     }
 }
