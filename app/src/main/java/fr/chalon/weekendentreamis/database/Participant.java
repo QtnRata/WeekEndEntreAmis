@@ -22,7 +22,7 @@ public class Participant {
     @ColumnInfo(name="sejours")
     private List<Sejour> sejours;
 
-    @ColumnInfo(name = "PosteDepenses")
+    @ColumnInfo(name = "posteDepenses")
     private List<PosteDepense> posteDepenses;
 
     public Participant(@NonNull String nom, @NonNull List<Sejour> sejours, @NonNull List<PosteDepense> posteDepenses){
