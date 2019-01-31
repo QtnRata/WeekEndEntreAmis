@@ -10,4 +10,6 @@ public class ParticipantDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant_details);
     }
+
+
 }
