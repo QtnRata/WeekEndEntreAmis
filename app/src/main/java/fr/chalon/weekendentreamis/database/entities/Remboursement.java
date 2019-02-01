@@ -8,11 +8,11 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 @Entity(tableName = "Remboursement",
-indices = {@Index(value={"idParticipantReceveur", "idParticipantEmetteur"},unique = true)},
+indices = {@Index(value={"idParticipantReceveur", "idParticipantEmetteur"},unique = true)}/*,
 foreignKeys = {
         @ForeignKey(entity = Participant.class,parentColumns = "id", childColumns = "idParticipantReceveur"),
         @ForeignKey(entity= Participant.class, parentColumns = "id", childColumns = "idParticipantEmetteur")
-})
+}*/)
 public class Remboursement {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="id")

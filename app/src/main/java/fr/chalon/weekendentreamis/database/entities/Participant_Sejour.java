@@ -7,10 +7,10 @@ import android.arch.persistence.room.Index;
 
 @Entity(tableName = "Participant_Sejour",
 primaryKeys = {"idParticipant", "idSejour"},
-        indices = {@Index( value = {"idParticipant", "idSejour"},unique = true)},
+        indices = {@Index( value = {"idParticipant", "idSejour"},unique = true)}/*,
 foreignKeys = {@ForeignKey(entity = Participant.class, parentColumns = "id", childColumns = "idParticipant"),
                 @ForeignKey(entity = Sejour.class, parentColumns = "id", childColumns = "idSejour")
-})
+}*/)
 public class Participant_Sejour {
 
     @ColumnInfo(name="idParticipant")
