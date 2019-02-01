@@ -85,9 +85,7 @@ public class SejourEditionActivity extends AppCompatActivity {
         }));
         //btnAddSejour.setOnClickListener(this);
         btnAddSejour.setOnClickListener((v1 -> {
-            Log.d("test",vm.getNom());
             if(checkForm()){
-
                 Sejour sejour = new Sejour(vm.getNom(),vm.getDateDebut(),vm.getDateFin(), 1);
                 sejourRepository.insert(sejour);
                 Toast t = Toast.makeText(this, "Séjour ajouté", Toast.LENGTH_SHORT);
