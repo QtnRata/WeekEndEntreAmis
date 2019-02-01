@@ -1,10 +1,7 @@
 package fr.chalon.weekendentreamis;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +16,7 @@ public class MainActivity extends AppCompatActivity
 
     private Fragment fragment;
     private ParticipantsListFragment participantsListFragment = ParticipantsListFragment.newInstance();
+    private SejourListFragment sejourListFragment = SejourListFragment.newInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +75,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_participants) {
             this.fragment = this.participantsListFragment;
+        }else if(id == R.id.nav_sejours){
+            this.fragment = this.sejourListFragment;
         }
+
 
         if (this.fragment != null)
         {
