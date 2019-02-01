@@ -48,12 +48,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         if (this.data != null)
         {
             return this.data.size();
+
         }
         return 0;
     }
 
     public void setData(List<String> data)
     {
+
         this.data = data;
+        notifyDataSetChanged();
     }
 }
