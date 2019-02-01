@@ -91,7 +91,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                 //ajout de sejour
                 Sejour sejour = new Sejour("Suded", DateConverter.getDate("02/03/2018").toString(), DateConverter.getDate("01/02/2018").toString() , 1);
                 sejourDao.insert(sejour);
-                sejour = new Sejour("Suded", DateConverter.getDate("10/10/2018").toString() , DateConverter.getDate("17/10/2018").toString(),1);
+                sejour = new Sejour("Russie-Pologne : visite des camps de concentration, goulag et des douches piquantes", DateConverter.getDate("10/10/2018").toString() , DateConverter.getDate("17/10/2018").toString(),1);
                 sejourDao.insert(sejour);
 
                 //ajout de poste de depense
@@ -105,7 +105,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                 posteDepenseDao.insert(posteDepense);
 
                 //ajout de paiement
-                Paiement paiement = new Paiement(1, 1,100);
+                /*Paiement paiement = new Paiement(1, 1,100);
                 paiementDao.insert(paiement);
                 paiement = new Paiement(2,1,50);
                 paiementDao.insert(paiement);
@@ -113,12 +113,13 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                 paiementDao.insert(paiement);
                 paiement = new Paiement(4, 1, 50);
                 paiementDao.insert(paiement);
-
+*/
                 //ajout de remboursement
-                Remboursement remboursement = new Remboursement(1,2,50);
+               /* Remboursement remboursement = new Remboursement(1,2,50);
                 remboursementDao.insert(remboursement);
                 remboursement = new Remboursement(2,1, 50);
                 remboursementDao.insert(remboursement);
+*/
 
                 return null;
         }

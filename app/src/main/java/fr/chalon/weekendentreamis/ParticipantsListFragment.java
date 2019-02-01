@@ -42,7 +42,7 @@ public class ParticipantsListFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.participants_list_fragment, container, false);
 
         this.addButton = view.findViewById(R.id.participants_add);

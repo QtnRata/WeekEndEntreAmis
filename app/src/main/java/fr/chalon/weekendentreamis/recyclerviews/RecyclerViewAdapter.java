@@ -53,12 +53,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         if (this.data != null)
         {
             return this.data.size();
+
         }
         return 0;
     }
 
     public void setData(Map<Long, String> data)
     {
+
         this.data = data;
         notifyDataSetChanged();
     }
