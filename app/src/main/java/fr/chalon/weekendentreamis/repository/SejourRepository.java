@@ -32,4 +32,6 @@ public class SejourRepository {
         executor.execute(()-> sejourDao.insert(sejour));
     }
 
+    public void deleteBySejourId(Long idSejour){executor.execute(()-> sejourDao.deleteBySejourId(idSejour));}
+
 }
