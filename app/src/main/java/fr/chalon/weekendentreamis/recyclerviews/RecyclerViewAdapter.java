@@ -1,46 +1,51 @@
 package fr.chalon.weekendentreamis.recyclerviews;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import fr.chalon.weekendentreamis.ParticipantsListFragment;
 import fr.chalon.weekendentreamis.R;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
-    public RecyclerViewAdapter(Context context, Class<?> activityTarget) {
+    public RecyclerViewAdapter(Context context, RecyclerViewHolderActions actions) {
         this.context = context;
-        this.activityTarget = activityTarget;
+        this.actions = actions;
     }
 
-    private List<String> data;
+    private Map<Long, String> data;
     private Context context;
-    private Class<?> activityTarget;
+    private RecyclerViewHolderActions actions;
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         // On récupère la vue qui contient un list-item pour la recycler view.
         View v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_list_item, viewGroup, false);
-        return new RecyclerViewHolder(v, this.activityTarget);
+        return new RecyclerViewHolder(v, this.actions);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        // On modifie les valeurs du viewHolder.
-        ((RecyclerViewHolder)viewHolder).setTextValue(this.data.get(i));
+        Map.Entry<Long,String> pair = (Map.Entry<Long,String>)this.data.entrySet().toArray()[i];
+
+        ((RecyclerViewHolder)viewHolder).setTextValue(pair.getValue());
+        ((RecyclerViewHolder)viewHolder).setId(pair.getKey());
+
+        // TODO si on a pas l'identifiant de l'entité dans le tag du textView, il faut peut-être binder les events ici plutôt que dans le constructeur du viewHolder
+        ((RecyclerViewHolder)viewHolder).getTextView().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).textViewOnClick());
+        ((RecyclerViewHolder)viewHolder).getBtnEdit().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonEditOnClick());
+        ((RecyclerViewHolder)viewHolder).getBtnRemove().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonRemoveOnClick());
     }
 
     @Override
@@ -52,8 +57,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         return 0;
     }
 
-    public void setData(List<String> data)
+    public void setData(Map<Long, String> data)
     {
         this.data = data;
+        notifyDataSetChanged();
     }
 }
+

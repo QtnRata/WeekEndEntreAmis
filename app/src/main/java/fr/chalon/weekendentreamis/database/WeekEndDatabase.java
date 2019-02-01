@@ -34,8 +34,6 @@ public abstract class WeekEndDatabase extends RoomDatabase {
     public abstract PaiementDao paiementDao();
     public abstract RemboursementDao remboursementDao();
 
-
-
     //singleton of the instanciation of the database
     public static WeekEndDatabase getDatabase(final Context context){
         if(INSTANCE == null){
@@ -121,7 +119,6 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                 remboursementDao.insert(remboursement);
                 remboursement = new Remboursement(2,1, 50);
                 remboursementDao.insert(remboursement);
-
 
                 return null;
         }
