@@ -2,24 +2,13 @@ package fr.chalon.weekendentreamis.viewmodels;
 
 import android.arch.lifecycle.ViewModel;
 
+import fr.chalon.weekendentreamis.database.entities.Participant;
+
 public class ParticipantEditionViewModel extends ViewModel {
 
-    private String nom;
-    private String prenom;
+    private Participant participant;
 
-    public String getNom() {
-        return nom;
-    }
+    public Participant getParticipant() { return this.participant; }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+    public void setParticipant(Participant participant) { this.participant = participant; }
 }

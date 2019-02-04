@@ -44,7 +44,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ((RecyclerViewHolder)viewHolder).setTextValue(pair.getValue());
         ((RecyclerViewHolder)viewHolder).setId(pair.getKey());
 
-        // TODO si on a pas l'identifiant de l'entité dans le tag du textView, il faut peut-être binder les events ici plutôt que dans le constructeur du viewHolder
         ((RecyclerViewHolder)viewHolder).getTextView().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).textViewOnClick());
         ((RecyclerViewHolder)viewHolder).getBtnEdit().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonEditOnClick());
         ((RecyclerViewHolder)viewHolder).getBtnRemove().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonRemoveOnClick());
