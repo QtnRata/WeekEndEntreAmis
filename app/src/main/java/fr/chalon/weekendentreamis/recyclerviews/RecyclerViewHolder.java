@@ -30,10 +30,6 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
         this.btnRemove = itemView.findViewById(R.id.btn_list_item_remove);
         this.btnEdit = itemView.findViewById(R.id.btn_list_item_edit);
         this.actions = actions;
-
-        this.textView.setOnClickListener(v -> this.textViewOnClick());
-        this.btnEdit.setOnClickListener(v -> this.buttonEditOnClick());
-        this.btnRemove.setOnClickListener(v -> this.buttonRemoveOnClick());
     }
 
     public TextView getTextView() {
@@ -64,15 +60,18 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void textViewOnClick() {
         Intent i = new Intent(this.itemView.getContext(), this.actions.getDetailsActivityTarget());
+        i.putExtra("id", this.getId());
         this.itemView.getContext().startActivity(i);
     }
 
     public void buttonEditOnClick() {
         Intent i = new Intent(this.itemView.getContext(), this.actions.getEditActivityTarget());
+        i.putExtra("id", this.getId());
         this.itemView.getContext().startActivity(i);
     }
 
     public void buttonRemoveOnClick() {
+
         this.actions.getDeleteCommand().accept(this.getId());
     }
 

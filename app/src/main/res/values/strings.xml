@@ -27,6 +27,10 @@
     <string name="nom_participant">Nom participant</string>
     <string name="prenom_participant">Prénom participant</string>
     <string name="editer">Editer</string>
+    <string name="retour">Retour</string>
+    <string name="nom_participant_error">Le nom est obligatoire.</string>
+    <string name="edit_failed_error">L\'édition à échouée.</string>
+    <string name="edit_succeeded_error">L\'édition a réussie.</string>
     <!-- fin Participants -->
 
 
