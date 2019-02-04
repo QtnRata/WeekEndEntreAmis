@@ -1,9 +1,6 @@
 package fr.chalon.weekendentreamis;
 
-import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.databinding.DataBindingUtil;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -75,8 +72,6 @@ public class SejourDetailsActivity extends AppCompatActivity {
             binding.setViewModel(sejourListViewModel);
         });
 
-        //recycler view poste de depense
-        posteDepenseRecyclerLayoutManager = new LinearLayoutManager(this);
 
         this.actions = new RecyclerViewHolderActions(
             PosteDepenseEditionActivity.class,PosteDepenseDetailsActivity.class,
@@ -84,32 +79,31 @@ public class SejourDetailsActivity extends AppCompatActivity {
                     posteDepenseRepository.deleteById(idPosteDepense);
                 }
         );
-        Log.d("postedepense", Long.toString(idSejour));
 
+        //recycler view poste de depense
+        posteDepenseRecyclerView = findViewById(R.id.recycler_view_postedepense_sejour);
+        posteDepenseRecyclerLayoutManager = new LinearLayoutManager(this);
+        posteDepenseRecyclerView.setLayoutManager(posteDepenseRecyclerLayoutManager);
         posteDepenseRecyclerViewAdapter = new RecyclerViewAdapter(this,this.actions);
         posteDepenseRepository.getPosteDepenseBySejour(idSejour).observe(this, posteDepenses ->{
             Map<Long, String> dataWithIds = posteDepenses.stream().collect(Collectors.toMap(p-> p.getId(), p->p.getLibelle()));
-            Log.d("postedepense", Integer.toString(posteDepenses.size()));
             ((RecyclerViewAdapter)this.posteDepenseRecyclerViewAdapter).setData(dataWithIds);
+            ((RecyclerViewAdapter)this.posteDepenseRecyclerViewAdapter).notifyDataSetChanged();
+
         });
 
-        posteDepenseRecyclerView = (RecyclerView)findViewById(R.id.recycler_view_postedepense_sejour);
-        this.posteDepenseRecyclerView.setLayoutManager(posteDepenseRecyclerLayoutManager);
 
 
         //ajout adapter
         this.posteDepenseRecyclerView.setAdapter(posteDepenseRecyclerViewAdapter);
 
         participantRecyclerView = (RecyclerView)findViewById(R.id.recycler_view_participant_sejour);
-        recapitulatifRecyclerView = (RecyclerView)findViewById(R.id.recycler_view_recapitulatif);
+       // recapitulatifRecyclerView = (RecyclerView)findViewById(R.id.recycler_view_recapitulatif);
 
 
-        posteDepenseRecyclerView.setNestedScrollingEnabled(false);
-        participantRecyclerView.setNestedScrollingEnabled(false);
-        recapitulatifRecyclerView.setNestedScrollingEnabled(false);
+        //recapitulatifRecyclerView.setNestedScrollingEnabled(false);
 
 
 
     }
-
 }
