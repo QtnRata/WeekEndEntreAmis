@@ -20,6 +20,11 @@
     <string name="add_posteDepense_sejour">Ajouter un poste de dépense</string>
     <string name="add_paiement_sejour">Ajouter un paiement</string>
     <string name="add_remboursement_sejour">Ajouter un remboursement</string>
+    <string name="error_missing_nom">Vous devez entrer un nom de séjour</string>
+    <string name="error_missing_date_debut">Vous devez ajouter une date de début</string>
+    <string name="error_missing_date_fin">Vous devez ajouter une date de début</string>
+    <string name="sejour_ajouter">Sejour ajouté</string>
+
     <!-- fin sejour -->
 
     <!-- Participants -->
@@ -28,7 +33,6 @@
     <string name="prenom_participant">Prénom participant</string>
     <string name="editer">Editer</string>
     <!-- fin Participants -->
-
 
 
 </resources>

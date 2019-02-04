@@ -32,6 +32,6 @@ public interface SejourDao {
     LiveData<List<Sejour>> getAllSejours();
 
     @Query("SELECT * FROM SEJOUR WHERE id = :idSejour")
-    LiveData<Sejour> getSejourById(long idSejour);
+    LiveData<Sejour> getSejourById(Long idSejour);
 
 }

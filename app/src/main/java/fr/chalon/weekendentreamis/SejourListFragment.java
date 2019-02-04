@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,7 @@ public class SejourListFragment extends Fragment {
             Intent intent = new Intent(v.getContext(), SejourEditionActivity.class);
             startActivity(intent);
         });
-
+        Log.d("this", container.getContext().toString());
         return v;
     }
 
@@ -85,7 +86,7 @@ public class SejourListFragment extends Fragment {
         sejourRepository.getAllSejours().observe(this, sejours -> {
             // On récupère les noms des sejours.
             Map<Long, String> dataWithId = sejours.stream()
-                    .collect(Collectors.toMap(p -> p.getId(), p -> p.getNom().toUpperCase()));
+                    .collect(Collectors.toMap(p -> p.getId(), p -> p.getNom()));
 
             // On les passe à l'adapter.
             ((RecyclerViewAdapter)this.sejoursRecyclerViewAdapter).setData(dataWithId);

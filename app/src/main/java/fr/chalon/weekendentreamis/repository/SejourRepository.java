@@ -14,6 +14,7 @@ public class SejourRepository {
 
     private SejourDao sejourDao;
     private LiveData<List<Sejour>> allSejours;
+    private LiveData<Sejour> sejour;
     private Executor executor;
 
     public SejourRepository(Application application) {
@@ -27,6 +28,8 @@ public class SejourRepository {
     public LiveData<List<Sejour>> getAllSejours() {
         return allSejours;
     }
+
+    public LiveData<Sejour> getSejourById(Long idSejour){ return sejourDao.getSejourById(idSejour);}
 
     public void insert(Sejour sejour){
         executor.execute(()-> sejourDao.insert(sejour));

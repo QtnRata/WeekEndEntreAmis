@@ -32,11 +32,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         // On récupère la vue qui contient un list-item pour la recycler view.
         View v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_list_item, viewGroup, false);
+        Log.d("bite", "create");
         return new RecyclerViewHolder(v, this.actions);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        Log.d("bite", "bind");
         Map.Entry<Long,String> pair = (Map.Entry<Long,String>)this.data.entrySet().toArray()[i];
 
         ((RecyclerViewHolder)viewHolder).setTextValue(pair.getValue());

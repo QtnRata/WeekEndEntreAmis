@@ -29,10 +29,10 @@ public class Sejour {
     private String dateFin;
 
     @ColumnInfo(name="statut")
-    private long statut;
+    private int statut;
 
 
-    public Sejour(@NonNull String nom, @NonNull String dateDebut, @NonNull String dateFin, @NonNull long statut){
+    public Sejour(@NonNull String nom, @NonNull String dateDebut, @NonNull String dateFin, @NonNull int statut){
         this.nom =nom;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
@@ -55,11 +55,11 @@ public class Sejour {
         this.id = id;
     }
 
-    public long getStatut() {
+    public int getStatut() {
         return statut;
     }
 
-    public void setStatut(long statut) {
+    public void setStatut(int statut) {
         this.statut = statut;
     }
 

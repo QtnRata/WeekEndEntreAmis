@@ -8,7 +8,7 @@ public class SejourListViewModel extends ViewModel {
     private String nom;
     private String dateDebut;
     private String dateFin;
-    private long statut;
+    private String statut;
 
 
     public String getNom() {
@@ -35,11 +35,11 @@ public class SejourListViewModel extends ViewModel {
         this.dateFin = dateFin;
     }
 
-    public long getStatut() {
+    public String getStatut() {
         return statut;
     }
 
-    public void setStatut(long statut) {
+    public void setStatut(String statut) {
         this.statut = statut;
     }
 }
