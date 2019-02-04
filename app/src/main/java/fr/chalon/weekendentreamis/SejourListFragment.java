@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import fr.chalon.weekendentreamis.recyclerviews.RecyclerViewAdapter;
+import fr.chalon.weekendentreamis.recyclerviews.RecyclerViewHolderActions;
 import fr.chalon.weekendentreamis.repository.SejourRepository;
 import fr.chalon.weekendentreamis.viewmodels.SejourListViewModel;
 
@@ -28,6 +30,7 @@ public class SejourListFragment extends Fragment {
     private RecyclerView sejoursRecyclerView;
     private RecyclerView.LayoutManager sejoursRecyclerViewLayoutManager;
     private RecyclerView.Adapter sejoursRecyclerViewAdapter;
+    private RecyclerViewHolderActions actions;
 
     private SejourRepository sejourRepository;
 
@@ -47,7 +50,14 @@ public class SejourListFragment extends Fragment {
 
         sejoursRecyclerViewLayoutManager = new LinearLayoutManager(container.getContext());
 
-        sejoursRecyclerViewAdapter = new RecyclerViewAdapter(container.getContext(),SejourDetailsActivity.class);
+        this.actions = new RecyclerViewHolderActions(
+                SejourEditionActivity.class,
+                SejourDetailsActivity.class,
+                (Long idSejour) ->{
+                    sejourRepository.deleteBySejourId(idSejour);
+                });
+
+        sejoursRecyclerViewAdapter = new RecyclerViewAdapter(container.getContext(),this.actions);
 
         sejoursRecyclerView = v.findViewById(R.id.sejours_recycler_view);
         this.sejoursRecyclerView.setLayoutManager(sejoursRecyclerViewLayoutManager);
@@ -74,12 +84,11 @@ public class SejourListFragment extends Fragment {
         sejourRepository = new SejourRepository(this.getActivity().getApplication());
         sejourRepository.getAllSejours().observe(this, sejours -> {
             // On récupère les noms des sejours.
-            List<String> data = sejours.stream()
-                    .map(p -> p.getNom().toUpperCase())
-                    .collect(Collectors.toList());
+            Map<Long, String> dataWithId = sejours.stream()
+                    .collect(Collectors.toMap(p -> p.getId(), p -> p.getNom().toUpperCase()));
 
             // On les passe à l'adapter.
-            ((RecyclerViewAdapter)this.sejoursRecyclerViewAdapter).setData(data);
+            ((RecyclerViewAdapter)this.sejoursRecyclerViewAdapter).setData(dataWithId);
         });
     }
 

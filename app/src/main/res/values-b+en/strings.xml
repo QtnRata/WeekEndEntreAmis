@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">WeekEndTrip</string>
+    <string name="title_activity_menu">WeekEnd with friends</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">WeekEnd with friends</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="selectionner">select</string>
+
+    <!-- sejours -->
+    <string name="title_fragment_sejours_list">Trips</string>
+    <string name="add_sejour">add trip</string>
+    <string name="nom_sejour">Trip name</string>
+    <string name="date_debut">Start date</string>
+    <string name="date_fin">End date</string>
+    <string name="statut">Statut</string>
+    <string name="add_participant_sejour">Add participant</string>
+    <string name="add_posteDepense_sejour">Add expense item</string>
+    <string name="add_paiement_sejour">Add payment</string>
+    <string name="add_remboursement_sejour">Add refund</string>
+
+    <!-- fin sejour -->
+
+    <!-- Participants -->
+    <string name="title_fragment_participants_list">Participants</string>
+    <string name="nom_participant">Participant LastName</string>
+    <string name="prenom_participant">Participant FirstName</string>
+    <string name="editer">Edit</string>
+    <!-- fin Participants -->
+</resources>

@@ -25,6 +25,9 @@ public interface SejourDao {
     @Query("DELETE FROM sejour")
     void deleteAll();
 
+    @Query("DELETE FROM sejour Where id =  :id")
+    void deleteBySejourId(Long id);
+
     @Query("SELECT * FROM SEJOUR ORDER BY nom ASC")
     LiveData<List<Sejour>> getAllSejours();
 
