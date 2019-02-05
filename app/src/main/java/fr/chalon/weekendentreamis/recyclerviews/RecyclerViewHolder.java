@@ -71,7 +71,6 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void buttonRemoveOnClick() {
-
         this.actions.getDeleteCommand().accept(this.getId());
     }
 
