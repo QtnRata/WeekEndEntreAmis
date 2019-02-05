@@ -4,13 +4,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import fr.chalon.weekendentreamis.R;
@@ -32,13 +29,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         // On récupère la vue qui contient un list-item pour la recycler view.
         View v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_list_item, viewGroup, false);
-        Log.d("bite", "create");
         return new RecyclerViewHolder(v, this.actions);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Log.d("bite", "bind");
         Map.Entry<Long,String> pair = (Map.Entry<Long,String>)this.data.entrySet().toArray()[i];
 
         ((RecyclerViewHolder)viewHolder).setTextValue(pair.getValue());

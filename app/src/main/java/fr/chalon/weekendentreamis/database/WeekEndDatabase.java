@@ -75,36 +75,38 @@ public abstract class WeekEndDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(final Void... params){
-                //delete de toutes les données
-                participantDao.deleteAll();
-                sejourDao.deleteAll();
-                posteDepenseDao.deleteAll();
-                paiementDao.deleteAll();
-                remboursementDao.deleteAll();
 
-                //ajout de participant
-                Participant participant = new Participant("Pif", "Paf");
-                participantDao.insert(participant);
-                participant = new Participant("Test", "prenomTest");
-                participantDao.insert(participant);
+                if(participantDao.getCountParticipant() <= 0){
+                    //delete de toutes les données
+                    participantDao.deleteAll();
+                    sejourDao.deleteAll();
+                    posteDepenseDao.deleteAll();
+                    paiementDao.deleteAll();
+                    remboursementDao.deleteAll();
 
-                //ajout de sejour
-                Sejour sejour = new Sejour("Suded", DateConverter.getDate("02/03/2018").toString(), DateConverter.getDate("01/02/2018").toString() , 1);
-                sejourDao.insert(sejour);
-                sejour = new Sejour("Russie-Pologne : visite des camps de concentration, goulag et des douches piquantes", DateConverter.getDate("10/10/2018").toString() , DateConverter.getDate("17/10/2018").toString(),1);
-                sejourDao.insert(sejour);
+                    //ajout de participant
+                    Participant participant = new Participant("Pif", "Paf");
+                    participantDao.insert(participant);
+                    participant = new Participant("Test", "prenomTest");
+                    participantDao.insert(participant);
 
-                //ajout de poste de depense
-                PosteDepense posteDepense = new PosteDepense("Hotel","ceci est une photo", 200, 1);
-                posteDepenseDao.insert(posteDepense);
-                posteDepense = new PosteDepense("Essence","ceci est une photo", 100, 1);
-                posteDepenseDao.insert(posteDepense);
-                posteDepense = new PosteDepense("karting","ceci est une photo", 50, 2);
-                posteDepenseDao.insert(posteDepense);
-                posteDepense = new PosteDepense("Location de banane","ceci est une photo", 100, 2);
-                posteDepenseDao.insert(posteDepense);
+                    //ajout de sejour
+                    Sejour sejour = new Sejour("Suded", DateConverter.getDate("02/03/2018").toString(), DateConverter.getDate("01/02/2018").toString() , 1);
+                    sejourDao.insert(sejour);
+                    sejour = new Sejour("Russie-Pologne : visite des camps de concentration, goulag et des douches piquantes", DateConverter.getDate("10/10/2018").toString() , DateConverter.getDate("17/10/2018").toString(),1);
+                    sejourDao.insert(sejour);
 
-                //ajout de paiement
+                    //ajout de poste de depense
+                    PosteDepense posteDepense = new PosteDepense("Hotel","ceci est une photo", 200, 1);
+                    posteDepenseDao.insert(posteDepense);
+                    posteDepense = new PosteDepense("Essence","ceci est une photo", 100, 1);
+                    posteDepenseDao.insert(posteDepense);
+                    posteDepense = new PosteDepense("karting","ceci est une photo", 50, 2);
+                    posteDepenseDao.insert(posteDepense);
+                    posteDepense = new PosteDepense("Location de banane","ceci est une photo", 100, 2);
+                    posteDepenseDao.insert(posteDepense);
+
+                    //ajout de paiement
                 /*Paiement paiement = new Paiement(1, 1,100);
                 paiementDao.insert(paiement);
                 paiement = new Paiement(2,1,50);
@@ -114,12 +116,14 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                 paiement = new Paiement(4, 1, 50);
                 paiementDao.insert(paiement);
 */
-                //ajout de remboursement
+                    //ajout de remboursement
                /* Remboursement remboursement = new Remboursement(1,2,50);
                 remboursementDao.insert(remboursement);
                 remboursement = new Remboursement(2,1, 50);
                 remboursementDao.insert(remboursement);
 */
+                }
+
 
                 return null;
         }
