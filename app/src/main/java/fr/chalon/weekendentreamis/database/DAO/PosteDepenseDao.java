@@ -22,6 +22,9 @@ public interface PosteDepenseDao {
     @Delete
     void delete(PosteDepense posteDepense);
 
+    @Query("DELETE FROM PosteDepense WHERE id = :idPoste")
+    void deleteByPosteId(Long idPoste);
+
     @Query("DELETE FROM PosteDepense")
     void deleteAll();
 
@@ -31,7 +34,7 @@ public interface PosteDepenseDao {
     @Query("SELECT * " +
             "FROM POSTEDEPENSE " +
             "WHERE idSejour = :idSejour")
-    LiveData<List<PosteDepense>> getPosteDepenseBySejour(int idSejour);
+    LiveData<List<PosteDepense>> getPosteDepenseBySejour(long idSejour);
 
     @Query("SELECT * FROM PosteDepense WHERE id = :id")
     LiveData<List<PosteDepense>> getPosteDepenseById(int id);

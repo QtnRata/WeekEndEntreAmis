@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SejourEditionActivity"></activity>
+        <activity android:name=".PosteDepenseDetailsActivity"></activity>
+        <activity android:name=".PosteDepenseEditionActivity" />
+        <activity android:name=".SejourEditionActivity" />
         <activity android:name=".SejourDetailsActivity" />
-        <activity android:name=".ParticipantEditionActivity"></activity>
+        <activity android:name=".ParticipantEditionActivity" />
         <activity android:name=".ParticipantDetailsActivity" />
         <activity
             android:name=".MainActivity"

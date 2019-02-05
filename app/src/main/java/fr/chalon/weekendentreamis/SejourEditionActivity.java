@@ -88,7 +88,7 @@ public class SejourEditionActivity extends AppCompatActivity {
             if(checkForm()){
                 Sejour sejour = new Sejour(vm.getNom(),vm.getDateDebut(),vm.getDateFin(), 1);
                 sejourRepository.insert(sejour);
-                Toast t = Toast.makeText(this, "Séjour ajouté", Toast.LENGTH_SHORT);
+                Toast t = Toast.makeText(this, R.string.sejour_ajouter, Toast.LENGTH_SHORT);
                 t.show();
             }
         }));
@@ -98,19 +98,19 @@ public class SejourEditionActivity extends AppCompatActivity {
 
     boolean checkForm(){
         if(formHelper.isEmpty(nom)){
-            Toast t = Toast.makeText(this, "Vous devez entrer un nom de séjour", Toast.LENGTH_SHORT);
-            t.show();
+            nom.setError(getResources().getString(R.string.error_missing_nom));
+            nom.requestFocus();
             return false;
         }
         if(formHelper.isEmpty(dateDebut)){
-            Toast t = Toast.makeText(this, "Vous devez ajouter une date de début", Toast.LENGTH_SHORT);
-            t.show();
+            dateDebut.setError(getResources().getString(R.string.error_missing_date_debut));
+            dateDebut.requestFocus();
             return false;
         }
 
         if(formHelper.isEmpty(dateFin)){
-            Toast t = Toast.makeText(this, "Vous devez ajouter une date de fin", Toast.LENGTH_SHORT);
-            t.show();
+           dateFin.setError(getResources().getString(R.string.error_missing_date_fin));
+           dateFin.requestFocus();
             return false;
         }
         return true;

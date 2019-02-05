@@ -71,7 +71,6 @@ public class SejourListFragment extends Fragment {
             Intent intent = new Intent(v.getContext(), SejourEditionActivity.class);
             startActivity(intent);
         });
-
         return v;
     }
 
@@ -85,7 +84,7 @@ public class SejourListFragment extends Fragment {
         sejourRepository.getAllSejours().observe(this, sejours -> {
             // On récupère les noms des sejours.
             Map<Long, String> dataWithId = sejours.stream()
-                    .collect(Collectors.toMap(p -> p.getId(), p -> p.getNom().toUpperCase()));
+                    .collect(Collectors.toMap(p -> p.getId(), p -> p.getNom()));
 
             // On les passe à l'adapter.
             ((RecyclerViewAdapter)this.sejoursRecyclerViewAdapter).setData(dataWithId);

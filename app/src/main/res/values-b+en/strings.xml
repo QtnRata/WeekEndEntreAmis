@@ -19,7 +19,10 @@
     <string name="add_posteDepense_sejour">Add expense item</string>
     <string name="add_paiement_sejour">Add payment</string>
     <string name="add_remboursement_sejour">Add refund</string>
-
+    <string name="error_missing_nom">Enter trip\'s name</string>
+    <string name="error_missing_date_debut">Enter the start date</string>
+    <string name="error_missing_date_fin">Enter the end date</string>
+    <string name="sejour_ajouter">Trip\'s added</string>
     <!-- fin sejour -->
 
     <!-- Participants -->
