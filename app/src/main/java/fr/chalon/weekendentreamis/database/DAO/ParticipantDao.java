@@ -39,6 +39,7 @@ public interface ParticipantDao {
     @Query("SELECT * FROM Participant INNER JOIN Participant_Sejour ON Participant.id = Participant_Sejour.idParticipant WHERE Participant_Sejour.idSejour = :idSejour")
     LiveData<List<Participant>> getParticipantBySejourId(long idSejour);
 
-
+    @Query("SELECT COUNT(*) FROM Participant")
+    int getCountParticipant();
 
 }

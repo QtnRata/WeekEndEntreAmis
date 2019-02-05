@@ -1,5 +1,6 @@
 package fr.chalon.weekendentreamis;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,10 +48,10 @@ public class SejourDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_sejour);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_sejour);
 
         sejourRepository = new SejourRepository(this.getApplication());
-        sejourListViewModel = new SejourListViewModel();
+        sejourListViewModel = ViewModelProviders.of(this).get(SejourListViewModel.class);
         sejourStatut = new SejourStatut();
 
         posteDepenseRepository = new PosteDepenseRepository(this.getApplication());
@@ -68,7 +69,7 @@ public class SejourDetailsActivity extends AppCompatActivity {
                 sejourListViewModel.setStatut(libelleStatut);
             }
 
-            binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_sejour);
+
             binding.setViewModel(sejourListViewModel);
         });
 
@@ -105,5 +106,11 @@ public class SejourDetailsActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onStart() {
+
+        super.onStart();
     }
 }
