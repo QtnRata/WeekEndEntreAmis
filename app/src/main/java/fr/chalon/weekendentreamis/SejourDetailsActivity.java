@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import fr.chalon.weekendentreamis.database.entities.Participant;
@@ -41,7 +40,6 @@ public class SejourDetailsActivity extends AppCompatActivity {
     private RecyclerView posteDepenseRecyclerView;
     private RecyclerView.LayoutManager posteDepenseRecyclerLayoutManager;
     private RecyclerView.Adapter posteDepenseRecyclerViewAdapter;
-
     private RecyclerView participantRecyclerView;
     private RecyclerView.LayoutManager participantRecyclerViewLayoutManager;
     private RecyclerView.Adapter participantRecyclerViewAdapter;
@@ -63,9 +61,10 @@ public class SejourDetailsActivity extends AppCompatActivity {
         sejourListViewModel = ViewModelProviders.of(this).get(SejourListViewModel.class);
         sejourStatut = new SejourStatut();
 
+        posteDepenseRepository = new PosteDepenseRepository(this.getApplication());
+
         long idSejour = getIntent().getLongExtra("id",0);
 
-        Log.d("idSejour", Long.toString(idSejour));
         sejourRepository.getSejourById(idSejour).observe(this, sejour -> {
             if(sejour != null){
                 sejourListViewModel.setNom(sejour.getNom());
@@ -76,7 +75,12 @@ public class SejourDetailsActivity extends AppCompatActivity {
                 sejourListViewModel.setStatut(libelleStatut);
             }
 
-
+            Button fab = findViewById(R.id.btnAddPosteDepenseSejour);
+            fab.setOnClickListener(view -> {
+                Intent intent = new Intent(this, PosteDepenseEditionActivity.class);
+                intent.putExtra("idSejour", sejour.getId());
+                startActivity(intent);
+            });
             binding.setViewModel(sejourListViewModel);
         });
 
@@ -98,7 +102,6 @@ public class SejourDetailsActivity extends AppCompatActivity {
             ((RecyclerViewAdapter)this.posteDepenseRecyclerViewAdapter).setData(dataWithIds);
             ((RecyclerViewAdapter)this.posteDepenseRecyclerViewAdapter).notifyDataSetChanged();
         });
-
         //ajout adapter
         this.posteDepenseRecyclerView.setAdapter(posteDepenseRecyclerViewAdapter);
 

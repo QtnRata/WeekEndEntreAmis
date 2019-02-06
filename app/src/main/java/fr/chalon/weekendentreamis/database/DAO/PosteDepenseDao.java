@@ -9,6 +9,7 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import fr.chalon.weekendentreamis.database.entities.Participant_PosteDepense;
 import fr.chalon.weekendentreamis.database.entities.PosteDepense;
 
 @Dao
@@ -37,7 +38,13 @@ public interface PosteDepenseDao {
     LiveData<List<PosteDepense>> getPosteDepenseBySejour(long idSejour);
 
     @Query("SELECT * FROM PosteDepense WHERE id = :id")
-    LiveData<List<PosteDepense>> getPosteDepenseById(int id);
+    LiveData<PosteDepense> getPosteDepenseById(long id);
+
+    @Query("SELECT idSejour FROM PosteDepense WHERE id = :id")
+    LiveData<Long> getIdSejourPosteDepenseById(long id);
+
+
+
 
 
 }

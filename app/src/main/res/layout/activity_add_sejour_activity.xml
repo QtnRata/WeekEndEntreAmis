@@ -2,8 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" >
     <data>
         <variable
+            name="editClickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
             name="viewModel"
-            type="fr.chalon.weekendentreamis.viewmodels.SejourListViewModel"></variable>
+            type="fr.chalon.weekendentreamis.viewmodels.SejourEditionViewModel"></variable>
+
     </data>
     <android.support.constraint.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,7 +27,7 @@
             android:ems="10"
             android:hint="@string/nom_sejour"
             android:inputType="textPersonName"
-            android:text="@={viewModel.nom}"
+            android:text="@={viewModel.sejour.nom}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +45,7 @@
             android:hint="@string/date_debut"
             android:inputType="text"
             android:focusable="false"
-            android:text="@={viewModel.dateDebut}"
+            android:text="@={viewModel.sejour.dateDebut}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtAddNomSejour" />
@@ -58,7 +62,7 @@
             android:hint="@string/date_fin"
             android:inputType="text"
             android:focusable="false"
-            android:text="@={viewModel.dateFin}"
+            android:text="@={viewModel.sejour.dateFin}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +77,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/add_sejour"
+            android:text="@string/editer"
+            android:onClickListener="@{editClickListener}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

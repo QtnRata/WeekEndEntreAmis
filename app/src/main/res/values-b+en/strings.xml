@@ -25,6 +25,16 @@
     <string name="sejour_ajouter">Trip\'s added</string>
     <!-- fin sejour -->
 
+    <!-- poste de depense -->
+    <string name="nom_poste_depense">expense name</string>
+    <string name="facture_poste_depense">bill</string>
+    <string name="montant_poste_depense">Price</string>
+    <string name="error_missing_libelle">Enter the name</string>
+    <string name="error_missing_facture">Enter bill</string>
+    <string name="error_missing_montant">Enter amount</string>
+
+
+
     <!-- Participants -->
     <string name="title_fragment_participants_list">Participants</string>
     <string name="nom_participant">Participant LastName</string>
@@ -36,4 +46,7 @@
     <string name="edit_succeeded_error">Edition succeeded.</string>
     <string name="valider">Validate</string>
     <!-- fin Participants -->
+
+
+
 </resources>

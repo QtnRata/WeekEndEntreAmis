@@ -25,7 +25,17 @@
     <string name="error_missing_date_fin">Vous devez ajouter une date de début</string>
     <string name="sejour_ajouter">Sejour ajouté</string>
 
+
     <!-- fin sejour -->
+
+    <!-- poste depense -->
+    <string name="nom_poste_depense">Libelle du poste de depense</string>
+    <string name="facture_poste_depense">Facture</string>
+    <string name="montant_poste_depense">Montant</string>
+    <string name="error_missing_libelle">Vous devez ajouter un libelle</string>
+    <string name="error_missing_facture">Vous devez ajouter une facture</string>
+    <string name="error_missing_montant">Vous devez ajouter un montant</string>
+
 
     <!-- Participants -->
     <string name="title_fragment_participants_list">Participants</string>
@@ -38,6 +48,9 @@
     <string name="edit_succeeded_error">L\'édition a réussie.</string>
     <string name="valider">valider</string>
     <!-- fin Participants -->
+
+
+
 
 
 </resources>

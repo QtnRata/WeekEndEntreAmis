@@ -71,6 +71,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void buttonEditOnClick() {
         Intent i = new Intent(this.itemView.getContext(), this.actions.getEditActivityTarget());
+
         i.putExtra("id",this.getId());
         this.itemView.getContext().startActivity(i);
     }

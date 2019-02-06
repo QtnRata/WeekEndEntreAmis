@@ -6,6 +6,9 @@
         <variable
             name="viewModel"
             type="fr.chalon.weekendentreamis.viewmodels.SejourListViewModel"></variable>
+        <variable
+            name="editClickListener"
+            type="android.view.View.OnClickListener"/>
     </data>
 
     <android.support.constraint.ConstraintLayout

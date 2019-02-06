@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 import fr.chalon.weekendentreamis.database.DAO.PaiementDao;
 import fr.chalon.weekendentreamis.database.DAO.ParticipantDao;
 import fr.chalon.weekendentreamis.database.DAO.ParticipantSejourDao;
+import fr.chalon.weekendentreamis.database.DAO.Participant_PosteDepenseDao;
 import fr.chalon.weekendentreamis.database.DAO.PosteDepenseDao;
 import fr.chalon.weekendentreamis.database.DAO.RemboursementDao;
 import fr.chalon.weekendentreamis.database.DAO.SejourDao;
@@ -35,6 +36,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
     public abstract PaiementDao paiementDao();
     public abstract RemboursementDao remboursementDao();
     public abstract ParticipantSejourDao participantSejourDao();
+    public abstract Participant_PosteDepenseDao participant_posteDepenseDao();
 
     //singleton of the instanciation of the database
     public static WeekEndDatabase getDatabase(final Context context){
@@ -67,6 +69,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
         private final PaiementDao paiementDao;
         private final RemboursementDao remboursementDao;
         private final ParticipantSejourDao participantSejourDao;
+        private final Participant_PosteDepenseDao participant_posteDepenseDao;
 
         PopulateDbAsync(WeekEndDatabase db){
             participantDao = db.participantDao();
@@ -75,6 +78,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
             paiementDao =db.paiementDao();
             remboursementDao = db.remboursementDao();
             participantSejourDao = db.participantSejourDao();
+            participant_posteDepenseDao = db.participant_posteDepenseDao();
         }
 
         @Override
@@ -87,6 +91,7 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                     posteDepenseDao.deleteAll();
                     paiementDao.deleteAll();
                     remboursementDao.deleteAll();
+                    participant_posteDepenseDao.deleteAll();
 
                     //ajout de participant
                     Participant p1 = new Participant("Gatefossey", "Dylan");
@@ -111,6 +116,12 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                     posteDepenseDao.insert(posteDepense);
                     posteDepense = new PosteDepense("Location de vélo","ceci est une photo", 100, 2);
                     posteDepenseDao.insert(posteDepense);
+
+                    //ajout participant poste depense
+                    Participant_PosteDepense participant_posteDepense = new Participant_PosteDepense(1,1);
+                    participant_posteDepenseDao.insert(participant_posteDepense);
+                    participant_posteDepense = new Participant_PosteDepense(2,1);
+                    participant_posteDepenseDao.insert(participant_posteDepense);
 
                     //ajout de paiement
                 /*Paiement paiement = new Paiement(1, 1,100);

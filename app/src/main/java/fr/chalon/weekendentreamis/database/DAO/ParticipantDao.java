@@ -12,6 +12,7 @@ import android.arch.persistence.room.Update;
 import java.util.List;
 
 import fr.chalon.weekendentreamis.database.entities.Participant;
+import fr.chalon.weekendentreamis.database.entities.Participant_PosteDepense;
 
 @Dao
 public interface ParticipantDao {
@@ -41,5 +42,8 @@ public interface ParticipantDao {
 
     @Query("SELECT COUNT(*) FROM Participant")
     int getCountParticipant();
+
+    @Query("SELECT * FROM Participant INNER JOIN Participant_PosteDepense ON Participant.id = Participant_PosteDepense.idParticipant WHERE idPosteDepense = :idPosteDepense")
+    LiveData<List<Participant>> getParticipantPosteDepense(long idPosteDepense);
 
 }
