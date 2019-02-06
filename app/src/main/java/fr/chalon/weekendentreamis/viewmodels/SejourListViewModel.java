@@ -2,6 +2,8 @@ package fr.chalon.weekendentreamis.viewmodels;
 
 import android.arch.lifecycle.ViewModel;
 
+import fr.chalon.weekendentreamis.database.entities.Sejour;
+
 public class SejourListViewModel extends ViewModel {
     // TODO: Implement the ViewModel
 
@@ -42,4 +44,5 @@ public class SejourListViewModel extends ViewModel {
     public void setStatut(String statut) {
         this.statut = statut;
     }
+
 }

@@ -25,4 +25,5 @@ public class ParticipantsListViewModel extends ViewModel {
     {
         this.participants.setValue(participants);
     }
+
 }

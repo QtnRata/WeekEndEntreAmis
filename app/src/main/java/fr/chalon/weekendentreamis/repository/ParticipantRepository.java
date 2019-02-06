@@ -49,42 +49,5 @@ public class ParticipantRepository {
             this.participantDao.deleteParticipantById(idParticipant);
         });
     }
-
-    /*
-    public LiveData<List<Participant>> getParticipantBySejourId(long idSejour) {
-        return participantDao.getParticipantBySejourId(idSejour);
-    }
-
-
-
-    //methode d'insert
-    private static class insertAsyncTask extends AsyncTask<Participant, Void, Void> {
-
-        private ParticipantDao mAsyncTaskDao;
-
-        insertAsyncTask(ParticipantDao dao) {
-            mAsyncTaskDao = dao;
-        }
-
-        @Override
-        protected Void doInBackground(final Participant... params) {
-            mAsyncTaskDao.insert(params[0]);
-            return null;
-        }
-    }
-
-    private static class DeleteAsyncTask extends AsyncTask<Long, Void, Void> {
-
-        private ParticipantDao asyncTaskDao;
-
-        DeleteAsyncTask(ParticipantDao dao) {
-            asyncTaskDao = dao;
-        }
-
-        @Override
-        protected Void doInBackground(final Long... params) {
-            asyncTaskDao.delete(params[0]);
-            return null;
-        }
-    }*/
+    public LiveData<List<Participant>> getParticipantPosteDepense(long idPosteDepense){ return participantDao.getParticipantPosteDepense(idPosteDepense);}
 }

@@ -4,6 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Index;
+import android.support.annotation.NonNull;
 
 @Entity(tableName = "Participant_PosteDepense",
 primaryKeys = {"idParticipant","idPosteDepense"},
@@ -19,6 +20,11 @@ public class Participant_PosteDepense {
 
     @ColumnInfo(name="idPosteDepense")
     private long idPosteDepense;
+
+    public Participant_PosteDepense(@NonNull long idParticipant, @NonNull long idPosteDepense){
+        this.idParticipant = idParticipant;
+        this.idPosteDepense = idPosteDepense;
+    }
 
 
     public long getIdParticipant() {

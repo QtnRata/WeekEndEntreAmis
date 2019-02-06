@@ -1,6 +1,8 @@
 package fr.chalon.weekendentreamis;
 
 import android.app.ActionBar;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +32,7 @@ public class ParticipantEditionActivity extends AppCompatActivity {
 
         this.repository = new ParticipantRepository(this.getApplication());
         this.binding = DataBindingUtil.setContentView(this, R.layout.activity_participant_edition);
-        this.viewModel = new ParticipantEditionViewModel();
+        this.viewModel = ViewModelProviders.of(this).get(ParticipantEditionViewModel.class);
 
         // Récupère l'id
         long id = this.getIntent().getLongExtra("id", 0);
