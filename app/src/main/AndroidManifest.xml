@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PosteDepenseDetailsActivity"></activity>
+        <activity android:name=".SejourAddParticipantActivity"></activity>
+        <activity android:name=".PosteDepenseDetailsActivity" />
         <activity android:name=".PosteDepenseEditionActivity" />
         <activity android:name=".SejourEditionActivity" />
         <activity android:name=".SejourDetailsActivity" />

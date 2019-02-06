@@ -8,6 +8,7 @@ public class RecyclerViewHolderActions {
     private Class<?> editActivityTarget;
     private Class<?> detailsActivityTarget;
     private Consumer<Long> deleteCommand;
+    private Consumer<Long> selectCommand;
 
     public RecyclerViewHolderActions(Class<?> editActivityTarget, Class<?> detailsActivityTarget, Consumer<Long> deleteCommand)
     {
@@ -16,9 +17,27 @@ public class RecyclerViewHolderActions {
         this.deleteCommand = deleteCommand;
     }
 
+    public RecyclerViewHolderActions(Consumer<Long> selectCommand)
+    {
+        this.selectCommand = selectCommand;
+    }
+
     public Consumer<Long> getDeleteCommand()
     {
         return this.deleteCommand;
+    }
+
+    public void setDeleteCommand(Consumer<Long> command) {
+        this.deleteCommand = command;
+    }
+
+    public Consumer<Long> getSelectCommand()
+    {
+        return this.selectCommand;
+    }
+
+    public void setSelectCommand(Consumer<Long> command) {
+        this.selectCommand = command;
     }
 
     public Class<?> getDetailsActivityTarget() {

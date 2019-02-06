@@ -43,10 +43,7 @@ public class ParticipantEditionActivity extends AppCompatActivity {
             {
                 // Si l'identifiant est valide et que le participant existe, on modifie le modèle.
                 this.viewModel.setParticipant(participant);
-                //this.viewModel.setNom(participant.getNom());
-                //this.viewModel.setPrenom(participant.getPrenom());
                 this.isUpdate = true;
-                Log.d("DEBUG", "ON CREATE : RECUP L'ENTITÉ POUR REMPLIR LE FORM");
             }
             else
             {
@@ -57,12 +54,6 @@ public class ParticipantEditionActivity extends AppCompatActivity {
             binding.setEditClickListener(v -> onSubmit());
             binding.setBackClickListener(v -> back());
         });
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
     }
 
     private void onSubmit() {
@@ -79,7 +70,6 @@ public class ParticipantEditionActivity extends AppCompatActivity {
         {
             // Créer un nouveau participant.
             this.repository.insert(this.viewModel.getParticipant());
-            Log.d("DEBUG", "ON SUBMIT : CREATION D'UNE ENTITÉ");
         }
 
         Toast.makeText(this, R.string.edit_succeeded_error, Toast.LENGTH_SHORT).show();

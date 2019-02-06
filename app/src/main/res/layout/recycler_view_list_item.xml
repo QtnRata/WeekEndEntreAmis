@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:padding="10dp"
-        android:text="Gros babouin azure d'eau de source du sheitan de satan des enfers de Tathanus rouge"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -55,13 +54,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_begin="329dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_begin="370dp" />
 
 </android.support.constraint.ConstraintLayout>
