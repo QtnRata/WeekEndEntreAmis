@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private TextView textView;
     private ImageButton btnRemove;
     private ImageButton btnEdit;
+    private CheckBox chkSelect;
 
     private RecyclerViewHolderActions actions;
 
@@ -29,6 +31,7 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
         textView = itemView.findViewById(R.id.list_item_value);
         this.btnRemove = itemView.findViewById(R.id.btn_list_item_remove);
         this.btnEdit = itemView.findViewById(R.id.btn_list_item_edit);
+        this.chkSelect = itemView.findViewById(R.id.chk_list_item_select);
         this.actions = actions;
     }
 
@@ -45,6 +48,8 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
     {
         return this.btnEdit;
     }
+
+    public CheckBox getChkSelect() { return this.chkSelect; }
 
     public void setTextValue(String value) {
         this.textView.setText(value);
@@ -72,6 +77,10 @@ class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void buttonRemoveOnClick() {
         this.actions.getDeleteCommand().accept(this.getId());
+    }
+
+    public void buttonSelectOnClick() {
+        this.actions.getSelectCommand().accept(this.getId());
     }
 
 }

@@ -30,5 +30,10 @@
     <string name="nom_participant">Participant LastName</string>
     <string name="prenom_participant">Participant FirstName</string>
     <string name="editer">Edit</string>
+    <string name="retour">Back</string>
+    <string name="nom_participant_error">Name is required.</string>
+    <string name="edit_failed_error">Edition failed.</string>
+    <string name="edit_succeeded_error">Edition succeeded.</string>
+    <string name="valider">Validate</string>
     <!-- fin Participants -->
 </resources>

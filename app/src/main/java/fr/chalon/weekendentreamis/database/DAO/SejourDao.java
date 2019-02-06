@@ -9,6 +9,7 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import fr.chalon.weekendentreamis.database.entities.Participant_Sejour;
 import fr.chalon.weekendentreamis.database.entities.Sejour;
 
 @Dao
@@ -33,5 +34,4 @@ public interface SejourDao {
 
     @Query("SELECT * FROM SEJOUR WHERE id = :idSejour")
     LiveData<Sejour> getSejourById(Long idSejour);
-
 }

@@ -28,7 +28,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         // On récupère la vue qui contient un list-item pour la recycler view.
-        View v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_list_item, viewGroup, false);
+
+        View v = null;
+
+        if (this.actions.getSelectCommand() != null)
+        {
+            v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_selectable_list_item, viewGroup, false);
+        }
+
+        if (this.actions.getEditActivityTarget() != null && this.actions.getDeleteCommand() != null)
+        {
+            v = LayoutInflater.from(this.context).inflate(R.layout.recycler_view_list_item, viewGroup, false);
+        }
+
         return new RecyclerViewHolder(v, this.actions);
     }
 
@@ -40,8 +52,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ((RecyclerViewHolder)viewHolder).setId(pair.getKey());
 
         ((RecyclerViewHolder)viewHolder).getTextView().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).textViewOnClick());
-        ((RecyclerViewHolder)viewHolder).getBtnEdit().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonEditOnClick());
-        ((RecyclerViewHolder)viewHolder).getBtnRemove().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonRemoveOnClick());
+
+        if (((RecyclerViewHolder)viewHolder).getBtnEdit() != null && ((RecyclerViewHolder)viewHolder).getBtnRemove() != null)
+        {
+            ((RecyclerViewHolder)viewHolder).getBtnEdit().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonEditOnClick());
+            ((RecyclerViewHolder)viewHolder).getBtnRemove().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonRemoveOnClick());
+        }
+
+        if (((RecyclerViewHolder)viewHolder).getChkSelect() != null) {
+            ((RecyclerViewHolder)viewHolder).getChkSelect().setOnClickListener(v -> ((RecyclerViewHolder)viewHolder).buttonSelectOnClick());
+        }
     }
 
     @Override
