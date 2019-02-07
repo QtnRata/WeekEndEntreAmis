@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">WeekEndTrip</string>
+    <string name="title_activity_menu">WeekEnd with friends</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">WeekEnd with friends</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="selectionner">select</string>
+
+    <!-- sejours -->
+    <string name="title_fragment_sejours_list">Trips</string>
+    <string name="add_sejour">add trip</string>
+    <string name="nom_sejour">Trip name</string>
+    <string name="date_debut">Start date</string>
+    <string name="date_fin">End date</string>
+    <string name="statut">Statut</string>
+    <string name="add_participant_sejour">Add participant</string>
+    <string name="add_posteDepense_sejour">Add expense item</string>
+    <string name="add_paiement_sejour">Add payment</string>
+    <string name="add_remboursement_sejour">Add refund</string>
+    <string name="error_missing_nom">Enter trip\'s name</string>
+    <string name="error_missing_date_debut">Enter the start date</string>
+    <string name="error_missing_date_fin">Enter the end date</string>
+    <string name="sejour_ajouter">Trip\'s added</string>
+    <!-- fin sejour -->
+
+    <!-- poste de depense -->
+    <string name="nom_poste_depense">expense name</string>
+    <string name="facture_poste_depense">bill</string>
+    <string name="montant_poste_depense">Price</string>
+    <string name="error_missing_libelle">Enter the name</string>
+    <string name="error_missing_facture">Enter bill</string>
+    <string name="error_missing_montant">Enter amount</string>
+
+
+
+    <!-- Participants -->
+    <string name="title_fragment_participants_list">Participants</string>
+    <string name="nom_participant">Participant LastName</string>
+    <string name="prenom_participant">Participant FirstName</string>
+    <string name="editer">Edit</string>
+    <string name="retour">Back</string>
+    <string name="nom_participant_error">Name is required.</string>
+    <string name="edit_failed_error">Edition failed.</string>
+    <string name="edit_succeeded_error">Edition succeeded.</string>
+    <string name="valider">Validate</string>
+    <!-- fin Participants -->
+
+
+
+</resources>

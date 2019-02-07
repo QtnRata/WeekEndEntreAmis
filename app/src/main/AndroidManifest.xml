@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SejourAddParticipantActivity"></activity>
+        <activity android:name=".PosteDepenseDetailsActivity" />
+        <activity android:name=".PosteDepenseEditionActivity" />
+        <activity android:name=".SejourEditionActivity" />
+        <activity android:name=".SejourDetailsActivity" />
+        <activity android:name=".ParticipantEditionActivity" />
+        <activity android:name=".ParticipantDetailsActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

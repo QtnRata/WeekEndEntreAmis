@@ -1,3 +1,56 @@
 <resources>
     <string name="app_name">WeekEndEntreAmis</string>
+    <string name="title_activity_menu">WeekEnd entre amis</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">WeekEnd entre amis</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Paramêtres</string>
+
+    <string name="selectionner">Sélectionner</string>
+
+    <!-- Sejours -->
+    <string name="title_fragment_sejours_list">Séjours</string>
+    <string name="add_sejour">ajouter le séjour</string>
+    <string name="nom_sejour">Nom séjour</string>
+    <string name="date_debut">Date début</string>
+    <string name="date_fin">Date fin</string>
+    <string name="statut">Statut</string>
+    <string name="add_participant_sejour">Ajouter un participant</string>
+    <string name="add_posteDepense_sejour">Ajouter un poste de dépense</string>
+    <string name="add_paiement_sejour">Ajouter un paiement</string>
+    <string name="add_remboursement_sejour">Ajouter un remboursement</string>
+    <string name="error_missing_nom">Vous devez entrer un nom de séjour</string>
+    <string name="error_missing_date_debut">Vous devez ajouter une date de début</string>
+    <string name="error_missing_date_fin">Vous devez ajouter une date de début</string>
+    <string name="sejour_ajouter">Sejour ajouté</string>
+
+
+    <!-- fin sejour -->
+
+    <!-- poste depense -->
+    <string name="nom_poste_depense">Libelle du poste de depense</string>
+    <string name="facture_poste_depense">Facture</string>
+    <string name="montant_poste_depense">Montant</string>
+    <string name="error_missing_libelle">Vous devez ajouter un libelle</string>
+    <string name="error_missing_facture">Vous devez ajouter une facture</string>
+    <string name="error_missing_montant">Vous devez ajouter un montant</string>
+
+
+    <!-- Participants -->
+    <string name="title_fragment_participants_list">Participants</string>
+    <string name="nom_participant">Nom participant</string>
+    <string name="prenom_participant">Prénom participant</string>
+    <string name="editer">Editer</string>
+    <string name="retour">Retour</string>
+    <string name="nom_participant_error">Le nom est obligatoire.</string>
+    <string name="edit_failed_error">L\'édition à échouée.</string>
+    <string name="edit_succeeded_error">L\'édition a réussie.</string>
+    <string name="valider">valider</string>
+    <!-- fin Participants -->
+
+
+
+
+
 </resources>
