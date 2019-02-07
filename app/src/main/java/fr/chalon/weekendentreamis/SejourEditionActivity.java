@@ -102,7 +102,7 @@ public class SejourEditionActivity extends AppCompatActivity {
                 this.isUpdate =true;
                 sejourEditionViewModel.setSejour(sejour);
             }else{
-                sejourEditionViewModel.setSejour(new Sejour("","","",0));
+                sejourEditionViewModel.setSejour(new Sejour("","","",1));
             }
             binding.setViewModel(sejourEditionViewModel);
             binding.setEditClickListener(v -> onSubmit());

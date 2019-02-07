@@ -46,7 +46,6 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                     //création database
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(), WeekEndDatabase.class, "WeekEndDatabase")
                             .addCallback(roomDatabaseCallback)
-                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -100,9 +99,9 @@ public abstract class WeekEndDatabase extends RoomDatabase {
                     participantDao.insert(p2);
 
                     //ajout de sejour
-                    Sejour s1 = new Sejour("Séjour à la plage", DateConverter.getDate("02/03/2018").toString(), DateConverter.getDate("01/02/2018").toString() , 1);
+                    Sejour s1 = new Sejour("Séjour à la plage", "02/03/2018", "01/02/2018" , 1);
                     sejourDao.insert(s1);
-                    Sejour s2 = new Sejour("Séjour au ski", DateConverter.getDate("10/10/2018").toString() , DateConverter.getDate("17/10/2018").toString(),1);
+                    Sejour s2 = new Sejour("Séjour au ski","10/10/2018" , "17/10/2018",1);
                     sejourDao.insert(s2);
 
                     participantSejourDao.insert(new Participant_Sejour(2,2));
